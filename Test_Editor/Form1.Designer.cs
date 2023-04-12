@@ -66,19 +66,19 @@
             this.decrementFontBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.fontColorBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.YellowBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.limeBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.turquoiseBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.fontCollectionComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.fontSizeBtn = new System.Windows.Forms.ToolStripComboBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.deleteTab = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.saveFDDoc = new System.Windows.Forms.SaveFileDialog();
             this.ofdNew = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.YellowBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.limeBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.turquoiseBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteTab = new System.Windows.Forms.ToolStripButton();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +116,7 @@
             this.создатьToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.создатьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("создатьToolStripMenuItem.Image")));
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             // 
             this.открытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьToolStripMenuItem.Image")));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
@@ -132,28 +132,28 @@
             // 
             this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             // 
             // поискToolStripMenuItem
             // 
             this.поискToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("поискToolStripMenuItem.Image")));
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.поискToolStripMenuItem.Text = "Поиск";
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("закрытьToolStripMenuItem.Image")));
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -433,6 +433,40 @@
             this.fontColorBtn.Text = "toolStripButton25";
             this.fontColorBtn.Click += new System.EventHandler(this.fontColorBtn_Click);
             // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.YellowBtn,
+            this.limeBtn,
+            this.turquoiseBtn});
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(46, 34);
+            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            // 
+            // YellowBtn
+            // 
+            this.YellowBtn.BackColor = System.Drawing.Color.Yellow;
+            this.YellowBtn.Name = "YellowBtn";
+            this.YellowBtn.Size = new System.Drawing.Size(67, 22);
+            this.YellowBtn.Click += new System.EventHandler(this.YellowBtn_Click);
+            // 
+            // limeBtn
+            // 
+            this.limeBtn.BackColor = System.Drawing.Color.Lime;
+            this.limeBtn.Name = "limeBtn";
+            this.limeBtn.Size = new System.Drawing.Size(67, 22);
+            this.limeBtn.Click += new System.EventHandler(this.limeBtn_Click);
+            // 
+            // turquoiseBtn
+            // 
+            this.turquoiseBtn.BackColor = System.Drawing.Color.Turquoise;
+            this.turquoiseBtn.Name = "turquoiseBtn";
+            this.turquoiseBtn.Size = new System.Drawing.Size(67, 22);
+            this.turquoiseBtn.Click += new System.EventHandler(this.turquoiseBtn_Click);
+            // 
             // fontCollectionComboBox
             // 
             this.fontCollectionComboBox.Name = "fontCollectionComboBox";
@@ -445,15 +479,15 @@
             this.fontSizeBtn.Size = new System.Drawing.Size(92, 37);
             this.fontSizeBtn.SelectedIndexChanged += new System.EventHandler(this.fontSizeBtn_SelectedIndexChanged);
             // 
-            // tabControl1
+            // deleteTab
             // 
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 61);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 652);
-            this.tabControl1.TabIndex = 5;
+            this.deleteTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteTab.Image = ((System.Drawing.Image)(resources.GetObject("deleteTab.Image")));
+            this.deleteTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteTab.Name = "deleteTab";
+            this.deleteTab.Size = new System.Drawing.Size(34, 34);
+            this.deleteTab.Text = "toolStripButton1";
+            this.deleteTab.Click += new System.EventHandler(this.deleteTab_Click);
             // 
             // statusStrip1
             // 
@@ -474,49 +508,15 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // toolStripSplitButton1
+            // tabControl1
             // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.YellowBtn,
-            this.limeBtn,
-            this.turquoiseBtn});
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(46, 34);
-            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
-            // 
-            // YellowBtn
-            // 
-            this.YellowBtn.BackColor = System.Drawing.Color.Yellow;
-            this.YellowBtn.Name = "YellowBtn";
-            this.YellowBtn.Size = new System.Drawing.Size(180, 22);
-            this.YellowBtn.Click += new System.EventHandler(this.YellowBtn_Click);
-            // 
-            // limeBtn
-            // 
-            this.limeBtn.BackColor = System.Drawing.Color.Lime;
-            this.limeBtn.Name = "limeBtn";
-            this.limeBtn.Size = new System.Drawing.Size(180, 22);
-            this.limeBtn.Click += new System.EventHandler(this.limeBtn_Click);
-            // 
-            // turquoiseBtn
-            // 
-            this.turquoiseBtn.BackColor = System.Drawing.Color.Turquoise;
-            this.turquoiseBtn.Name = "turquoiseBtn";
-            this.turquoiseBtn.Size = new System.Drawing.Size(180, 22);
-            this.turquoiseBtn.Click += new System.EventHandler(this.turquoiseBtn_Click);
-            // 
-            // deleteTab
-            // 
-            this.deleteTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteTab.Image = ((System.Drawing.Image)(resources.GetObject("deleteTab.Image")));
-            this.deleteTab.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteTab.Name = "deleteTab";
-            this.deleteTab.Size = new System.Drawing.Size(34, 34);
-            this.deleteTab.Text = "toolStripButton1";
-            this.deleteTab.Click += new System.EventHandler(this.deleteTab_Click);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 61);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(894, 652);
+            this.tabControl1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -583,7 +583,6 @@
         private System.Windows.Forms.ToolStripButton fontColorBtn;
         private System.Windows.Forms.ToolStripComboBox fontCollectionComboBox;
         private System.Windows.Forms.ToolStripComboBox fontSizeBtn;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.SaveFileDialog saveFDDoc;
         private System.Windows.Forms.OpenFileDialog ofdNew;
@@ -594,6 +593,7 @@
         private System.Windows.Forms.ToolStripMenuItem limeBtn;
         private System.Windows.Forms.ToolStripMenuItem turquoiseBtn;
         private System.Windows.Forms.ToolStripButton deleteTab;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 
