@@ -381,6 +381,7 @@
             this.toUpperBtn.Name = "toUpperBtn";
             this.toUpperBtn.Size = new System.Drawing.Size(34, 34);
             this.toUpperBtn.Text = "toolStripButton21";
+            this.toUpperBtn.Click += new System.EventHandler(this.toUpperBtn_Click);
             // 
             // toLowerBtn
             // 
