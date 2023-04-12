@@ -27,11 +27,19 @@ namespace Test_Editor
         {
             get { return (RichTextBox)tabControl1.SelectedTab.Controls["Page"]; }
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.fontsSelector = GetDefaultFont();
+            tabControl1.ContextMenuStrip = contextMenuStrip1;
+            AddPage();
+            GetFontCollection();
+            FontSize();
+        }
         private void AddPage()
         {
             RichTextBox newpage = new RichTextBox
             {//текстовое поле где писать
-                Name = "Page ",
+                Name = "Page",
                 AcceptsTab = true,
                 Dock = DockStyle.Fill,
                 ContextMenuStrip = contextMenuStrip1,
@@ -196,23 +204,23 @@ namespace Test_Editor
         private void GetFontCollection()
         {
             InstalledFontCollection Fonts = new InstalledFontCollection();
-            foreach(FontFamily font in Fonts.Families)
+            foreach (FontFamily font in Fonts.Families)
             {
-                toolStripComboBox1.Items.Add(font.Name);
+                fontCollectionComboBox.Items.Add(font.Name);
             }
-            toolStripComboBox1.SelectedIndex = toolStripComboBox1.FindString(defaultFont);
+            fontCollectionComboBox.SelectedIndex = fontCollectionComboBox.FindString(defaultFont);
         }
         private void FontSize()
         {
-            for(int i = 0; i <= toolStripComboBox1.Items.Count;i++)
+            for (int i = 0; i <= fontCollectionComboBox.Items.Count; i++)
             {
-                toolStripComboBox2.Items.Add(i);
+                fontSizeBtn.Items.Add(i);
             }
-            toolStripComboBox2.SelectedIndex = fontsDefaulSize;
+            fontSizeBtn.SelectedIndex = fontsDefaulSize;
         }
         private Font GetDefaultFont()
         {
-            return new Font(defaultFont,fontsDefaulSize,FontStyle.Regular);
+            return new Font(defaultFont, fontsDefaulSize, FontStyle.Regular);
         }
         #endregion
 
@@ -220,9 +228,10 @@ namespace Test_Editor
         {
             Font regularFont = new Font(getCurrentDoc.SelectionFont.FontFamily,
                 getCurrentDoc.SelectionFont.SizeInPoints, FontStyle.Regular);
+
             Font NegrilaFont = new Font(getCurrentDoc.SelectionFont.FontFamily,
                 getCurrentDoc.SelectionFont.SizeInPoints, FontStyle.Bold);
-            if(getCurrentDoc.SelectionFont.Bold)
+            if (getCurrentDoc.SelectionFont.Bold)
             {
                 getCurrentDoc.SelectionFont = regularFont;
             }
@@ -278,6 +287,112 @@ namespace Test_Editor
             {
                 getCurrentDoc.SelectionFont = strickeout;
             }
+        }
+
+        private void LeftAlignmentbtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void centerAlignmentBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void rightAlignmentBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void delParagraphBtn_Click(object sender, EventArgs e)
+        {
+            if (getCurrentDoc.SelectionIndent != 0)
+            {
+                getCurrentDoc.SelectionIndent -= 25;
+            }
+        }
+
+        private void addParagraphBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionIndent += 25;
+        }
+
+        private void selectionBulletBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionBullet = !getCurrentDoc.SelectionBullet;
+        }
+
+        private void toUpperBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectedText = getCurrentDoc.SelectedText.ToUpper();
+        }
+
+        private void toLowerBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectedText = getCurrentDoc.SelectedText.ToLower();
+        }
+
+        private void incrementFontBtn_Click(object sender, EventArgs e)
+        {
+            float NewFont = getCurrentDoc.SelectionFont.SizeInPoints + 2;
+            Font newFont = new Font(getCurrentDoc.SelectionFont.Name,NewFont, getCurrentDoc.SelectionFont.Style);
+            this.fontsSelector = newFont;
+            getCurrentDoc.SelectionFont = newFont;
+        }
+
+        private void decrementFontBtn_Click(object sender, EventArgs e)
+        {
+            float NewDecremFont = getCurrentDoc.SelectionFont.SizeInPoints - 2;
+            Font NewFont = new Font(getCurrentDoc.SelectionFont.Name, NewDecremFont, getCurrentDoc.SelectionFont.Style);
+            this.fontsSelector = NewFont;
+            getCurrentDoc.SelectionFont = NewFont;
+        }
+
+        private void fontColorBtn_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                getCurrentDoc.SelectionColor = colorDialog1.Color;
+            }
+        }
+
+        private void YellowBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionBackColor = Color.Yellow;
+        }
+
+        private void limeBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionBackColor = Color.Lime;
+        }
+
+        private void turquoiseBtn_Click(object sender, EventArgs e)
+        {
+            getCurrentDoc.SelectionBackColor = Color.Turquoise;
+        }
+
+        private void fontCollectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font NewFontFromCollection = new Font(
+                fontCollectionComboBox.SelectedItem.ToString(),
+                getCurrentDoc.SelectionFont.Size,
+                getCurrentDoc.SelectionFont.Style);
+            this.fontsSelector = NewFontFromCollection;
+            getCurrentDoc.SelectionFont = NewFontFromCollection;
+        }
+
+        private void fontSizeBtn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            float NewSize;
+            float.TryParse(fontSizeBtn.SelectedItem.ToString(), out NewSize);
+            Font NewFont = new Font(getCurrentDoc.SelectionFont.Name,NewSize,getCurrentDoc.SelectionFont.Style);
+            this.fontsSelector = NewFont;
+            getCurrentDoc.SelectionFont = NewFont;
+        }
+
+        private void deleteTab_Click(object sender, EventArgs e)
+        {
+            DeletePages();
         }
     }
 }
